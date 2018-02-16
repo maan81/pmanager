@@ -16,7 +16,11 @@ class CreateRolesTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name');
+            $table->string('project_id');
+            $table->string('user_id');
+
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         });
