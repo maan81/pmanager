@@ -14,4 +14,14 @@ class Project extends Model
         'user_id',
         'days',
     ];
+
+    public function user()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
