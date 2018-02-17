@@ -24,5 +24,6 @@ Route::resources([
     'comments' => 'CommentsController',
     'projects' => 'ProjectsController',
     'roles' => 'RolesController',
+    'tasks' => 'TasksController',
 ]);
 
