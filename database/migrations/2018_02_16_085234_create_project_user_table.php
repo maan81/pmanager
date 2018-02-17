@@ -14,6 +14,7 @@ class CreateProjectUserTable extends Migration
     public function up()
     {
         Schema::create('project_user', function (Blueprint $table) {
+
             $table->increments('id');
 
             $table->integer('project_id')->unsigned();
