@@ -23,5 +23,6 @@ Route::resources([
     'companies' => 'CompaniesController',
     'comments' => 'CommentsController',
     'projects' => 'ProjectsController',
+    'roles' => 'RolesController',
 ]);
 
