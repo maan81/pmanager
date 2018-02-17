@@ -25,5 +25,6 @@ Route::resources([
     'projects' => 'ProjectsController',
     'roles' => 'RolesController',
     'tasks' => 'TasksController',
+    'users' => 'UsersController',
 ]);
 
