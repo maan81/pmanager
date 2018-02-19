@@ -62,6 +62,7 @@ class CompaniesController extends Controller
     public function edit(Company $company)
     {
         //
+        dd('editing '.$company->id);
     }
 
     /**
