@@ -56,7 +56,11 @@
                     <form method="post" action="/companies/{{$company->id}}">
                         {{csrf_field()}}
                         {{method_field('DELETE')}}
-                        <input type="submit" class="btn btn-link" style="padding: 0;margin: 0;" name="delete" value="Delete" />
+                        <input type="submit" class="btn btn-link"
+                            style="padding: 0;margin: 0;"
+                            name="delete" value="Delete"
+                            onclick="if(!confirm('Are you sure delete company '+'{{$company->name}}'+'?')){return false;}"
+                        />
                     </form>
                      <!--
                         <form method="post" action="{{route('companies.destroy',[$company->id])}}">
