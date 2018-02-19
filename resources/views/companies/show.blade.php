@@ -52,7 +52,27 @@
             <ol class="list-unstyled">
                 <li><a href="/companies/create">Add</a></li>
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
-                <li><a href="#">Delete</a></li>
+                <li>
+                    <form method="post" action="/companies/{{$company->id}}">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                        <input type="submit" class="btn btn-link" style="padding: 0;margin: 0;" name="delete" value="Delete" />
+                    </form>
+                     <!--
+                        <form method="post" action="{{route('companies.destroy',[$company->id])}}">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <input type="submit" class="btn btn-link" style="padding: 0;margin: 0;" name="delete" value="Delete" />
+                        </form>
+                    -->
+                    <!--
+                        <form method="post" action="/companies/{{$company->id}}">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <button type="button" class="btn btn-link" style="padding: 0;margin: 0;">Delete</button>
+                        </form>
+                    -->
+                </li>
             </ol>
         </div>
         <div class="sidebar-module">
