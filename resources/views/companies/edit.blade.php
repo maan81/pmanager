@@ -15,6 +15,10 @@
 
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            {{csrf_field()}}
+
+            {{method_field('PUT')}}
+
 
             <div class="checkbox">
                 <label>
