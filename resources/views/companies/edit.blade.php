@@ -17,6 +17,7 @@
                 <input
                     type="text"
                     id="company-name"
+                    name="company-name"
                     class="form-control"
                     placeholder="Company Name"
                     required autofocus
@@ -29,6 +30,7 @@
                 <textarea
                     type="text"
                     id="company-description"
+                    name="company-description"
                     class="form-control"
                     placeholder="Company Description">{{$company->description}}</textarea>
             </div>
