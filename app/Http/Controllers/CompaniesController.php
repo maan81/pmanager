@@ -63,7 +63,7 @@ class CompaniesController extends Controller
     public function edit(Company $company)
     {
         //
-        dd('editing '.$company->id);
+        return view('companies.edit',compact('company'));
     }
 
     /**
