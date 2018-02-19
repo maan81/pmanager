@@ -103,7 +103,18 @@ class CompaniesController extends Controller
     public function destroy(Company $company)
     {
         //
-        echo 'Delete : ';
-        dd($company);
+
+        $id = $company->id;
+
+        if($company->delete()){
+            return redirect('companies')
+                ->with('success','Company ID '.$id.' deleted')
+            ;
+        }
+
+        return back()
+            ->withInput()
+            ->with('error', 'Company could not be deleted')
+        ;
     }
 }
