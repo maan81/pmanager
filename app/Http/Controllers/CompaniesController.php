@@ -28,6 +28,7 @@ class CompaniesController extends Controller
     public function create()
     {
         //
+        dd('creating company');
     }
 
     /**
