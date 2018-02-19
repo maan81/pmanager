@@ -8,22 +8,29 @@
 
         <form method="post" action="/companies/{{$company->id}}" class="form-signin">
 
-            <h2 class="form-signin-heading">Please sign in</h2>
-
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             {{csrf_field()}}
 
             {{method_field('PUT')}}
 
+            <div class="form-group">
+                <label for="company-name" class="sr-only">Name</label>
+                <input
+                    type="text"
+                    id="company-name"
+                    class="form-control"
+                    placeholder="Company Name"
+                    required autofocus
+                    value="{{$company->name}}"
+                >
+            </div>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+            <div class="form-group">
+                <label for="company-description" class="sr-only">Description</label>
+                <textarea
+                    type="text"
+                    id="company-description"
+                    class="form-control"
+                    placeholder="Company Description">{{$company->description}}</textarea>
             </div>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
