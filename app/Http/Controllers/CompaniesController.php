@@ -85,12 +85,9 @@ class CompaniesController extends Controller
         ;
 
         if ($companyUpdate) {
-            return redirect()
-                ->route(
-                    'companies.show',
-                    ['company'=>$company->id]
-                )
-                ->with(['success','Company Updated'])
+
+            return redirect('companies/'.$company->id)
+                ->with('success','Company Updated')
             ;
         }
 

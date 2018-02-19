@@ -73,7 +73,11 @@
 
 
         <div class="container">
-            @yield('content')
+            @include('partials.errors')
+            @include('partials.success')
+            <div class="row">
+                @yield('content')
+            </div>
         </div>
     </div>
 
