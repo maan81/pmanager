@@ -6,7 +6,7 @@
 
     <div class="col-md-6 col-lg-6">
 
-        <form method="post" action="/companies/{{$company->id}}/store" class="form-signin">
+        <form method="post" action="/companies/{{$company->id}}" class="form-signin">
 
             <h2 class="form-signin-heading">Please sign in</h2>
 

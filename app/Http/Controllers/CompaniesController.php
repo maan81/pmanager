@@ -76,6 +76,7 @@ class CompaniesController extends Controller
     public function update(Request $request, Company $company)
     {
         //
+        dd('updating company id '.$company->id);
     }
 
     /**
