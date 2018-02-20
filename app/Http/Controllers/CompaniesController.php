@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 
 class CompaniesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>['index','show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -29,6 +35,7 @@ class CompaniesController extends Controller
     public function create()
     {
         //
+
         return view('companies.create');
     }
 
@@ -65,6 +72,7 @@ class CompaniesController extends Controller
     public function edit(Company $company)
     {
         //
+
         return view('companies.edit',compact('company'));
     }
 
