@@ -16,6 +16,12 @@
             </p> -->
         </div>
 
+        @if(Auth::check())
+            <div class="pull-right">
+                <a href="/projects/create" class="btn btn-default btn-sm">Add Project</a>
+            </div>
+        @endif
+
         <!-- Example row of columns -->
         <div class="row">
             @foreach($company->projects as $project)
@@ -47,9 +53,11 @@
     </div>
 
     <div class="blog-sidebar col-md-3">
+        @if(Auth::check())
         <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
+                <li><a href="/projects/create">Create Project</a></li>
                 <li><a href="/companies/create">Create Company</a></li>
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
                 <li>
@@ -79,6 +87,7 @@
                 </li>
             </ol>
         </div>
+        @endif
         <div class="sidebar-module">
             <h4>Memers</h4>
             <ol class="list-unstyled">
