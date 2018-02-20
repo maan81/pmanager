@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('city')->nullable();
 
-            $table->integer('role_id')->unassigned();
+            $table->integer('role_id')->nullable();
         });
     }
 
