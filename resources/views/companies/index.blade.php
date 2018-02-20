@@ -6,7 +6,12 @@
 
         <div class="panel panel-primary">
 
-            <div class="panel-heading">Companies</div>
+            <div class="panel-heading">
+                Companies
+                <a href="/companies/create" class="pull-right bg-primary" style="padding: 0px 5px;border-radius: 3px;" >
+                    Create
+                </a>
+            </div>
 
             <div class="panel-body">
 
