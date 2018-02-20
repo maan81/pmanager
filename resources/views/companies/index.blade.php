@@ -8,9 +8,11 @@
 
             <div class="panel-heading">
                 Companies
-                <a href="/companies/create" class="pull-right bg-primary" style="padding: 0px 5px;border-radius: 3px;" >
-                    Create
-                </a>
+                @if(Auth::check())
+                    <a href="/companies/create" class="pull-right bg-primary" style="padding: 0px 5px;border-radius: 3px;" >
+                        Create
+                    </a>
+                @endif
             </div>
 
             <div class="panel-body">
