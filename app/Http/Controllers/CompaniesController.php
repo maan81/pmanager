@@ -22,7 +22,9 @@ class CompaniesController extends Controller
     public function index()
     {
         //
-        $companies = Company::all();
+        $companies = Company::all()
+            ->where('user_id',auth()->user()->id)
+        ;
 
         return view('companies.index', [ 'companies' => $companies ]);
     }
