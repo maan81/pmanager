@@ -50,7 +50,7 @@
         <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-                <li><a href="/companies/create">Add</a></li>
+                <li><a href="/companies/create">Create Company</a></li>
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
                 <li>
                     <form method="post" action="/companies/{{$company->id}}">
