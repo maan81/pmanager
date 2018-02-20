@@ -48,7 +48,16 @@ class CompaniesController extends Controller
     public function store(Request $request)
     {
         //
-        dd('store');
+
+        $company = Company::create([
+            'name' => request('company-name'),
+            'description' => request('company-description'),
+            'user_id' => auth()->user()->id,
+        ]);
+
+        $company->save();
+
+        return redirect('companies/'.$company->id);
     }
 
     /**
