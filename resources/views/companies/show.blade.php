@@ -18,7 +18,7 @@
 
         @if(Auth::check())
             <div class="pull-right">
-                <a href="/projects/create" class="btn btn-default btn-sm">Add Project</a>
+                <a href="/projects/create/{{$company->id}}" class="btn btn-default btn-sm">Add Project</a>
             </div>
         @endif
 
@@ -30,7 +30,7 @@
                     <!-- <p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p> -->
                     <p>{{$project->description}}</p>
                     <p>
-                        <a class="btn btn-primary" href="/projects/{{$project->id}}" role="button">View details &raquo;</a>
+                        <a class="btn btn-primary" href="/projects/{{$company->id}}" role="button">View details &raquo;</a>
                     </p>
                 </div>
                 <!-- <div class="col-lg-4">
@@ -57,7 +57,7 @@
         <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-                <li><a href="/projects/create">Create Project</a></li>
+                <li><a href="/projects/create/{{$company->id}}">Create Project</a></li>
                 <li><a href="/companies/create">Create Company</a></li>
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
                 <li>
