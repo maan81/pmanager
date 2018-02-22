@@ -18,7 +18,7 @@
 
         @if(Auth::check())
             <div class="pull-right">
-                <a href="/projects/create/{{$company->id}}" class="btn btn-default btn-sm">Add Project</a>
+                <a href="/projects/{{$company->id}}/create" class="btn btn-default btn-sm">Add Project</a>
             </div>
         @endif
 
@@ -57,7 +57,7 @@
         <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-                <li><a href="/projects/create/{{$company->id}}">Create Project</a></li>
+                <li><a href="/projects/{{$company->id}}/create">Create Project</a></li>
                 <li><a href="/companies/create">Create Company</a></li>
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
                 <li>
