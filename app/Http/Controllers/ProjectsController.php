@@ -3,18 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Company;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
+    protected $company;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    private function get_company($id = null)
+    {
+        $this->company = is_null($id) ? Company::find($id) : null;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -22,9 +35,9 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -33,9 +46,9 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -44,9 +57,9 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Project $project, $id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -55,9 +68,9 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Project $project, $id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -67,9 +80,9 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Project $project, $id = null)
     {
-        //
+        $this->get_company($id);
     }
 
     /**
@@ -78,8 +91,8 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Project $project, $id = null)
     {
-        //
+        $this->get_company($id);
     }
 }
