@@ -6,6 +6,8 @@ use App\Project;
 use App\Company;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class ProjectsController extends Controller
 {
     protected $company;
@@ -28,6 +30,12 @@ class ProjectsController extends Controller
     public function index($id = null)
     {
         $this->get_company($id);
+
+        $projects = Project::all()
+            ->where('user_id',auth()->user()->id)
+        ;
+
+        return view('projects.index', compact('projects'));
     }
 
     /**
