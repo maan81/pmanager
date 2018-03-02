@@ -19,7 +19,7 @@ class ProjectsController extends Controller
 
     private function get_company($id = null)
     {
-        $this->company = is_null($id) ? Company::find($id) : null;
+        $this->company = is_null($id) ? null : Company::find($id);
     }
 
     /**
