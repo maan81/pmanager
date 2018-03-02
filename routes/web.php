@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::middleware(['auth'])->group(function(){
 Route::resources([
     'companies' => 'CompaniesController',
     'comments' => 'CommentsController',
@@ -27,3 +28,4 @@ Route::resources([
     'tasks' => 'TasksController',
     'users' => 'UsersController',
 ]);
+});
