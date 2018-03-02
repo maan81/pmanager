@@ -47,12 +47,6 @@ class ProjectsController extends Controller
     {
         $this->get_company($id);
 
-        dd($id);
-        dd($company);
-        dd($this->company);
-        // dd('create project');
-
-
         return view('projects.create',['company'=>$this->company]);
     }
 
