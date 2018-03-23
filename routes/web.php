@@ -17,15 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::middleware(['auth'])->group(function(){
-Route::resources([
-    'companies' => 'CompaniesController',
-    'comments' => 'CommentsController',
-    'projects/{id}' => 'ProjectsController',
-    'roles' => 'RolesController',
-    'tasks' => 'TasksController',
-    'users' => 'UsersController',
-]);
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::resources([
+        'companies' => 'CompaniesController',
+        'comments' => 'CommentsController',
+        'projects/{id}' => 'ProjectsController',
+        'roles' => 'RolesController',
+        'tasks' => 'TasksController',
+        'users' => 'UsersController',
+    ]);
 });
