@@ -30,9 +30,7 @@ class ProjectsController extends Controller
     {
         $this->get_company($id);
 
-        $projects = Project::all()
-            ->where('user_id',auth()->user()->id)
-        ;
+        $projects = Project::all();
 
         return view('projects.index', compact('projects'));
     }
