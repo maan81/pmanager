@@ -37,31 +37,33 @@
                 <li><a href="/projects/create">Create Company</a></li>
                 <li><a href="/projects">My Project</a></li>
                 <li><a href="/projects/{{$project->id}}/edit">Edit</a></li>
-                <li>
-                    <form method="post" action="/projects/{{$project->id}}">
-                        {{csrf_field()}}
-                        {{method_field('DELETE')}}
-                        <input type="submit" class="btn btn-link"
-                            style="padding: 0;margin: 0;"
-                            name="delete" value="Delete"
-                            onclick="if(!confirm('Are you sure delete project '+'{{$project->name}}'+'?')){return false;}"
-                        />
-                    </form>
-                     <!--
-                        <form method="post" action="{{route('projects.destroy',[$project->id])}}">
-                            {{csrf_field()}}
-                            {{method_field('DELETE')}}
-                            <input type="submit" class="btn btn-link" style="padding: 0;margin: 0;" name="delete" value="Delete" />
-                        </form>
-                    -->
-                    <!--
+                @if(Auth::user()->id==$project->user_id)
+                    <li>
                         <form method="post" action="/projects/{{$project->id}}">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
-                            <button type="button" class="btn btn-link" style="padding: 0;margin: 0;">Delete</button>
+                            <input type="submit" class="btn btn-link"
+                                style="padding: 0;margin: 0;"
+                                name="delete" value="Delete"
+                                onclick="if(!confirm('Are you sure delete project '+'{{$project->name}}'+'?')){return false;}"
+                            />
                         </form>
-                    -->
-                </li>
+                         <!--
+                            <form method="post" action="{{route('projects.destroy',[$project->id])}}">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <input type="submit" class="btn btn-link" style="padding: 0;margin: 0;" name="delete" value="Delete" />
+                            </form>
+                        -->
+                        <!--
+                            <form method="post" action="/projects/{{$project->id}}">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <button type="button" class="btn btn-link" style="padding: 0;margin: 0;">Delete</button>
+                            </form>
+                        -->
+                    </li>
+                @endif
             </ol>
         </div>
         @endif
