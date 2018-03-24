@@ -7,8 +7,8 @@
 
         <!-- <pre>{{print_r($project->projects)}}</pre> -->
 
-        <!-- Jumbotron -->
-        <div class="jumbotron">
+        <!-- Well -->
+        <div class="well well-lg">
             <h1>{{$project->name}}!</h1>
             <p class="lead">{{$project->description}}</p>
             <!-- <p>
