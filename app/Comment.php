@@ -14,4 +14,9 @@ class Comment extends Model
         'commentable_id',   // project_id OR company_id
         'commentable_type', // project OR company
     ];
+
+    public function commentable()
+    {
+        return $this->morphTo();
+    }
 }
