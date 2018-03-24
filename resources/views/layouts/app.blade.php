@@ -47,6 +47,9 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li>
+                                <a href="/projects">Projects</a>
+                            </li>
+                            <li>
                                 <a href="/companies">Companies</a>
                             </li>
                             <li>
