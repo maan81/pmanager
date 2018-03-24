@@ -24,4 +24,9 @@ class Project extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }
