@@ -22,6 +22,43 @@
             </div>
         @endif
 
+        <br/>
+
+        <div class="rpw" style="margin: 15px 0; padding: 15px 0">
+            <form method="post" action="/comments" class="form-signin">
+
+                {{csrf_field()}}
+
+                <input type="hidden" name="commentable" value="Project">
+                <input type="hidden" name="commentable_id" value="{{$project->id}}">
+
+                <div class="form-group">
+                    <label for="body">Comments</label>
+                    <textarea
+                        type="text"
+                        id="body"
+                        name="body"
+                        class="form-control"
+                        placeholder="Comments"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="url" class="form-control" placeholder="Enter URL">
+                    <!-- <textarea
+                        type="text"
+                        id="url"
+                        name="url"
+                        class="form-control"
+                        placeholder="Enter URL"
+                        rows="3"></textarea> -->
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+
         <!-- Example row of columns -->
         <div class="row">
         </div>
