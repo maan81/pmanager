@@ -35,6 +35,7 @@
             <ol class="list-unstyled">
                 <li><a href="/projects/create">Create Project</a></li>
                 <li><a href="/projects/create">Create Company</a></li>
+                <li><a href="/projects">My Project</a></li>
                 <li><a href="/projects/{{$project->id}}/edit">Edit</a></li>
                 <li>
                     <form method="post" action="/projects/{{$project->id}}">
