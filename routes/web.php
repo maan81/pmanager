@@ -24,7 +24,10 @@ Route::middleware(['auth'])->group(function(){
     Route::resources([
         'companies' => 'CompaniesController',
         'comments' => 'CommentsController',
-        'projects/{id}' => 'ProjectsController',
+
+        'projects' => 'ProjectsController',
+        // 'projects/{id}' => 'ProjectsController',
+
         'roles' => 'RolesController',
         'tasks' => 'TasksController',
         'users' => 'UsersController',
