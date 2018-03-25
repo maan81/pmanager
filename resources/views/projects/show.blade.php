@@ -29,7 +29,7 @@
 
                 {{csrf_field()}}
 
-                <input type="hidden" name="commentable" value="Project">
+                <input type="hidden" name="commentable_type" value="Project">
                 <input type="hidden" name="commentable_id" value="{{$project->id}}">
 
                 <div class="form-group">
