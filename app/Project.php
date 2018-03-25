@@ -15,6 +15,8 @@ class Project extends Model
         'days',
     ];
 
+    protected $attributes = ['comments'];
+
     public function user()
     {
         return $this->belongsToMany(User::class);
@@ -27,6 +29,8 @@ class Project extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany('\App\Comment', 'commentable');
+        // return $this->morphMany(Comment::class, 'commentable');
+        // return $this->hasMany(Comment::class);
     }
 }

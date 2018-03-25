@@ -3,7 +3,9 @@
 @section('content')
 
     <div class="col-md-9">
-        <!-- <pre>{{print_r($project)}}</pre> -->
+        <pre>{{print_r($project)}}</pre>
+        <pre>{{print_r($project->comments())}}</pre>
+        <!-- <pre>{{print_r($comments)}}</pre> -->
 
         <!-- <pre>{{print_r($project->projects)}}</pre> -->
 
@@ -21,6 +23,18 @@
                 <a href="/projects/create" class="btn btn-default btn-sm">Add Project</a>
             </div>
         @endif
+
+        <div class="row">
+
+            @foreach($comments as $comment)
+                <div class="col-lg-12">
+                    <!-- <pre>{{print_r($comment)}}</pre> -->
+                    <!-- <p>{{$comment->body}}</p>
+                    <small>{{$comment->user_id}}</small> -->
+                </div>
+            @endforeach
+
+        </div>
 
         <br/>
 
@@ -57,10 +71,6 @@
                 <button class="btn btn-primary" type="submit">Submit</button>
 
             </form>
-        </div>
-
-        <!-- Example row of columns -->
-        <div class="row">
         </div>
 
     </div>

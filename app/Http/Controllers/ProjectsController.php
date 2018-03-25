@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Company;
+use App\Comment;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,18 @@ class ProjectsController extends Controller
     {
         $this->company = is_null($id) ? null : Company::find($id);
     }
+
+    // private function get_comments(/*$id = null*/$project)
+    // {
+    //     $comments = Comment::all()
+    //         ->where('commentable_id','=',$project->id)
+    //         ->where('commentable_type','=','Project')
+    //     ;
+
+    //     // dd($comments);
+
+    //     $this->project->comments = $comments;
+    // }
 
     /**
      * Display a listing of the resource.
@@ -78,8 +91,12 @@ class ProjectsController extends Controller
     public function show(Project $project, $id = null)
     {
         $this->get_company($id);
+        // $project = $this->get_comments($project);
 
-        return view('projects.show',compact('project'));
+        // dd($project);
+        dd($project->comments);
+
+        return view('projects.show',compact('project','comments'));
     }
 
     /**
