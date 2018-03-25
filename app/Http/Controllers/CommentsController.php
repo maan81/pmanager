@@ -38,6 +38,21 @@ class CommentsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $comment = Comment::create([
+            'body' => $request->input('body'),
+            'url' => $request->input('url'),
+            'commentable_id' => $request->input('commentable_id'),
+            'commentable_type' => $request->input('commentable_type'),
+            'user_id' => auth()->user()->id,
+        ]);
+
+        if($comment){
+            $comment->save();
+            return back()->with('success','Comment added');
+        }
+
+        return back()->with('failure','Error creating Comment');
     }
 
     /**
